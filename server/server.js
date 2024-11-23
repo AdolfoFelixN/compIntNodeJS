@@ -32,7 +32,8 @@ app.get('/product', (req, res) => {
 
 app.get('/product/:id', (req, res) => {
     // reading id from the URL
-    const id = req.params.id;
+    //const id = req.params.id;
+    const id = req.params.id || (products.length + 1).toString();
 
     // searching products for the id
     for (let product of products) {
