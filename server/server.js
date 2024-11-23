@@ -52,7 +52,7 @@ app.delete('/product/:id', (req, res) => {
 
     // remove item from the products array
     products = products.filter(i => {
-        if (i.id !== id) {
+        if (i.id != id) {
             return true;
         }
 
