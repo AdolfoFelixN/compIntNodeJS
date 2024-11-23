@@ -32,8 +32,7 @@ app.get('/product', (req, res) => {
 
 app.get('/product/:id', (req, res) => {
     // reading id from the URL
-    //const id = req.params.id;
-    const id = req.params.id || (products.length + 1).toString();
+    const id = req.params.id;
 
     // searching products for the id
     for (let product of products) {
@@ -66,7 +65,8 @@ app.delete('/product/:id', (req, res) => {
 
 app.post('/product/:id', (req, res) => {
     // reading id from the URL
-    const id = req.params.id;
+    //const id = req.params.id;
+    const id = req.params.id || (products.length + 1).toString();
     const newProduct = req.body;
 
     // remove item from the products array
