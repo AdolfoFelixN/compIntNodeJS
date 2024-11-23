@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
     res.send("API deployment successful");
 });
 
+/*
 app.post('/product', (req, res) => {
     const product = req.body;
 
@@ -24,6 +25,16 @@ app.post('/product', (req, res) => {
     products.push(product);
 
     res.send('Product is added to the database');
+});
+*/
+app.post('/product', (req, res) => {
+    const product = req.body;
+
+    // output the product to the console for debugging
+    console.log(product);
+    products.push({ ...product, id: product?.id || products.length + 1 });
+
+    res.send('Product is added to the database');
 });
 
 app.get('/product', (req, res) => {
